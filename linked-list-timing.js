@@ -7,41 +7,45 @@ Construct a timing test to verify the time complexities of `addToHead` and
 */
 
 // Your code here
+let time1, time2
 
-let n = 20000
-let ll = new LinkedList();
-
-// ll.addToHead is O(1) makes this for loop O(n)
-console.time("LL: addToHead")
-for (let i = 0 ; i < n ; i++) {
-  ll.addToHead(i);
+let testNode = new LinkedList
+console.log('HeadSingle O(1)');
+for ( let i = 0; i < 1000000; i += 100000) {
+  time1 = new Date()
+  for ( let j = 0; j < 1000000; j ++) {    
+    testNode.addToHead(i)
+  }
+  time2 = new Date()
+  console.log(time2 - time1);
 }
-console.timeEnd("LL: addToHead")
-
-
-// ll.addToTail is O(n) makes this loop O(n^2)
-
-ll = new LinkedList();
-console.time("LL: addToTail")
-for (let i = 0 ; i < n ; i++) {
-  ll.addToTail(i);
+testNode = new LinkedList
+console.log('TailSingle O(n)');
+for ( let i = 0; i < 10000; i += 1000) {
+  time1 = new Date()
+  for ( let j = 0; j < 5000; j ++) {    
+    testNode.addToTail(i)
+  }
+  time2 = new Date()
+  console.log(time2 - time1);
 }
-console.timeEnd("LL: addToTail")
-
-
-// dll.addToHead is O(1) makes this loop O(n)
-let dll = new DoublyLinkedList();
-console.time("DLL: addToHead")
-for (let i = 0 ; i < n ; i++) {
-  dll.addToHead(i);
+testNode = new DoublyLinkedList
+console.log('HeadDoubly O(1)');
+for ( let i = 0; i < 1000000; i += 100000) {
+  time1 = new Date()
+  for ( let j = 0; j < 1000000; j ++) { 
+      testNode.addToTail(i)
+  }
+  time2 = new Date()
+  console.log(time2 - time1);
 }
-console.timeEnd("DLL: addToHead")
-
-
-// dll.addToTail is O(1) makes this loop O(n)
-dll = new DoublyLinkedList();
-console.time("DLL: addToTail")
-for (let i = 0 ; i < n ; i++) {
-  dll.addToTail(i);
+testNode = new DoublyLinkedList
+console.log('TailDoubly O(1)');
+for ( let i = 0; i < 1000000; i += 100000) {
+  time1 = new Date()
+  for ( let j = 0; j < 1000000; j ++) {  
+    testNode.addToTail(i)
+  }
+  time2 = new Date()
+  console.log(time2 - time1);
 }
-console.timeEnd("DLL: addToTail")
